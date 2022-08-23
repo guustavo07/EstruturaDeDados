@@ -10,19 +10,20 @@ public class bubbleSort {
 		int vetor[];
 		vetor = new int[5];
 		for(i= 0;i<5;i++){
-			vetor[i]= numrandomico.nextInt(9);				
+			vetor[i]= numrandomico.nextInt(99);				
 			System.out.println(" "+vetor[i]);	
 		}
 		System.out.println(" ");
 		
-		for(i = 0; i<5; i++){
-			for(int j = 0; j<4; j++){
+		for(i = 0; i<vetor.length; i++){
+			for(int j = 0; j<vetor.length-1; j++){
 				if(vetor[j] > vetor[j + 1]){
 					aux = vetor[j];
 					vetor[j] = vetor[j+1];
 					vetor[j+1] = aux;
 				}
 			}
+		}
 			System.out.println("Vetor organizado:");
 			for(i = 0; i<5; i++){
 				System.out.println(" "+vetor[i]);
@@ -31,4 +32,4 @@ public class bubbleSort {
 
 	}
 
-}
+
