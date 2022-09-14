@@ -7,28 +7,23 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		Scanner ler = new Scanner(System.in);
+		Lista lista = new Lista();
 		
-		System.out.println("");
-		
-		List<Integer> list1 = new ArrayList<Integer>();
-        for(int i=0; i<=10; i++) {
-        	list1.add(i);
-        }
-        
-        List<Integer> list2 = new ArrayList<Integer>();
-        for(int i=0; i<=10; i++) {
-        	list2.add(i);
-        }
-        
-        List<Integer> concatenated_list = new ArrayList<Integer>();
-        concatenated_list.addAll(list1);
-        concatenated_list.addAll(list2);
-        
-        System.out.println("list1: " + list1);
-        System.out.println("list2: " + list2);
-        System.out.println("Concatenated list: " + concatenated_list);
-		
-	}
+		lista.mostrarLista();
+	    lista.inserirInicio(new Integer(3));
+	    lista.inserirFinal(new Integer(7));
+	    lista.inserirMeio(new Integer(5),2);
+	    lista.inserirMeio(new Integer(4),2);
+	    lista.inserirMeio(new Integer(6),4);
+	    lista.mostrarLista();
+	    System.out.println("Total de nós: " + lista.contarNos());
+	    
+	    lista.remover(new Integer(3));
+	    lista.remover(new Integer(7));
+	    System.out.println("Nós após remoção: " + lista.contarNos());
+	    lista.mostrarLista();
+	    
+	    System.out.println("O número '6' está na lista: " + lista.buscaNo(6));
+	    }
 
 }
