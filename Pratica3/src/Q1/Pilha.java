@@ -7,19 +7,19 @@ import java.util.Stack;
 public class Pilha {
 	
 	public static void main(String[] args) throws FileNotFoundException{
-		Scanner scanner;
-		Stack pilha = new Stack(); // Classe Pilha
+		Stack pilha = new Stack();
+		String frase [] = new String[10]; 
 		
-        scanner = new Scanner(new File("caminho do arquivo"));
-        while (scanner.hasNextLine()){
-            pilha.push(scanner.nextLine());
+		Scanner ler = new Scanner(new File("caminho do arquivo"));
+        while (ler.hasNextLine()){
+            pilha.push(ler.nextLine());
         }
-       System.out.println("Pilha de Nomes");
-        while(!pilha.empty())
-		   {
+        for (int i=0;i<10;i++) {
+            frase[i] = (String) pilha.pop();
+            System.out.println("As frases mais buscadas são: "+frase[i]);       
+        while(!pilha.empty()){
 		        System.out.println(pilha.pop());
 		    }
 	}
-
-
+}
 }
